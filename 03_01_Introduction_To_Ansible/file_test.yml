@@ -1,0 +1,16 @@
+---
+  - hosts: single
+    become: true
+    tasks:
+      - file:
+          path: /home/ec2-user/somescript.sh
+          owner: ec2-user
+          group: ec2-user
+          mode: 0644
+      - name: like touch file3.txt
+        file:
+          path: /home/ec2-user/file3.txt
+          owner: ec2-user
+          group: ec2-user
+          state: touch
+          mode: 0644

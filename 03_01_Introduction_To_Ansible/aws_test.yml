@@ -1,0 +1,16 @@
+#Authentication link https://docs.ansible.com/ansible/latest/collections/amazon/aws/docsite/guide_aws.html
+# https://docs.ansible.com/ansible/2.5/modules/ec2_module.html#ec2-module
+#export AWS_ACCESS_KEY_ID='AKIAS4CFQDRIGF5WC4UF'
+#export AWS_SECRET_ACCESS_KEY='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'
+---
+  - hosts: localhost
+    become: true
+    tasks:
+      - ec2:
+          instance_type: t2.micro
+          wait: yes
+          count: 1
+          image: ami-01216e7612243e0ef
+          region: ap-south-1
+
+

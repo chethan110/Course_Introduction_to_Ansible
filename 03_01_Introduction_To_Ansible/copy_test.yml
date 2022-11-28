@@ -1,0 +1,20 @@
+---
+  - hosts: single
+    become: true
+    tasks:
+      - name: example copying file with owner and permissions https://docs.ansible.com/ansible/2.5/modules/copy_module.html#copy-module
+        copy:
+          src: somescript.sh
+          dest: somescript.sh
+          owner: ec2-user
+          group: ec2-user
+          mode: 0777
+      - name: Copy content with multiline content
+        copy:
+          content: |
+            This is first line
+            This is second line
+            This is third line
+          dest: /home/ec2-user/file2.txt
+      - name: Execute the command in remote shell; stdout goes to the specified file on the remote.
+        shell: /home/ec2-user/somescript.sh >> somelog.txt

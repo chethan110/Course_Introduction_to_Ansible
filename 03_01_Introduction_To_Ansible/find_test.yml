@@ -1,0 +1,13 @@
+---
+  - hosts: single
+    become: true
+    tasks:
+      - name: Find /home/ec2-user files ending with .txt https://docs.ansible.com/ansible/2.5/modules/find_module.html#find-module
+        find:
+          paths: /home/ec2-user
+          patterns: '*.txt'
+          recurse: yes
+        register: output
+
+      - debug: var=item.path
+        with_items: "{{ output.files }}"

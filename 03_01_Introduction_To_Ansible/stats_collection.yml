@@ -1,0 +1,6 @@
+#Try ansible si -m setup 
+#Try ansible si -m setup -a "filter=ansible_architecture" 
+
+- name: Stats collection https://ostechnix.com/ansible-facts/
+  hosts: single
+  gather_facts: true

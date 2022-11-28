@@ -7,12 +7,8 @@ Parameters:
     Type: AWS::EC2::KeyPair::KeyName
 Mappings:
   RegionMap:
-    us-east-1:
-      AMI: ami-0ff8a91507f77f867
-    us-east-2:
-      AMI: ami-02e680c4540db351e
-    us-west-2:
-      AMI: ami-a0cfeed8
+    ap-south-1:
+      AMI: ami-062df10d14676e201
 Resources:
   LnEc2InstanceWebServer1:
     Type: AWS::EC2::Instance
